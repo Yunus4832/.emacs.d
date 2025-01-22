@@ -25,6 +25,7 @@
   :config
   (setq evil-escape-key-sequence "jj")
   (setq evil-escape-delay 0.5)
+  (push 'visual evil-escape-excluded-states)
   (evil-escape-mode 1))
 
 (provide 'vim-emulator)
