@@ -19,5 +19,13 @@
   :config
   (evil-collection-init))
 
+;; evil-escape 用于设置退出 insert 模式的按键映射
+(use-package evil-escape
+  :after evil-collection
+  :config
+  (setq evil-escape-key-sequence "jj")
+  (setq evil-escape-delay 0.5)
+  (evil-escape-mode 1))
+
 ;;; vim-emulatro.el ends here
 
