@@ -13,5 +13,7 @@
 ;; 关闭版本控制备份
 (setq version-control nil)
 
+(provide 'general-setting)
+
 ;;; general-setting ends here
 

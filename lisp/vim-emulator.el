@@ -19,5 +19,7 @@
   :config
   (evil-collection-init))
 
-;;; vim-emulatro.el ends here
+(provide 'vim-emulator)
+
+;;; vim-emulator.el ends here
 
