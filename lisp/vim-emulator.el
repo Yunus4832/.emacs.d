@@ -27,5 +27,7 @@
   (setq evil-escape-delay 0.5)
   (evil-escape-mode 1))
 
-;;; vim-emulatro.el ends here
+(provide 'vim-emulator)
+
+;;; vim-emulator.el ends here
 
