@@ -1,6 +1,7 @@
-custom-file.el
+custom.el
 recentf
 elpa/
 url/
 auto-save-list/
 transient/
+org-persist/
