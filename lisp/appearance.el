@@ -21,6 +21,10 @@
     :config
     (powerline-default-theme))
 
+;; 设置字体
+(set-face-attribute 'default nil :family "Consolas NF" :height 120)
+(set-fontset-font t 'han (font-spec :family "新宋体" :height 120))
+
 (provide 'theme-config)
 
 ;;; theme-config ends here 
