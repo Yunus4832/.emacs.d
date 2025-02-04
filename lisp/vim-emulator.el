@@ -13,6 +13,11 @@
     :config
     (evil-mode 1))
 
+;; treemacs 的 evil 扩展
+(use-package treemacs-evil
+  :defer 1
+  :after (treemacs evil-collection))
+
 ;; Evil 补充
 (use-package evil-collection
   :after evil
@@ -31,4 +36,3 @@
 (provide 'vim-emulator)
 
 ;;; vim-emulator.el ends here
-

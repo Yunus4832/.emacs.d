@@ -1,7 +1,9 @@
-custom.el
-recentf
-elpa/
-url/
-auto-save-list/
-transient/
-org-persist/
+*
+!lisp/
+!lisp/**
+!third-single-package/
+!third-single-package/**
+!init.el
+!early-init.el
+!key-mapping.el
+!.gitignore

@@ -13,7 +13,10 @@
 ;; 关闭版本控制备份
 (setq version-control nil)
 
+;; 开启全局本地文件自动保存
+(auto-save-visited-mode t)
+
 (provide 'general-setting)
 
-;;; general-setting ends here
+;;; general-setting.el ends here
 

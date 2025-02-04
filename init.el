@@ -43,6 +43,24 @@
   (add-to-list 'load-path lisp-dir)
   (mapc 'load (directory-files lisp-dir t "\\.el$")))
 
+;; 加载键映射
+(defvar key-mapping-file "~/.emacs.d/key-mapping.el")
+(unless (file-exists-p key-mapping-file)
+  (write-region "" nil key-mapping-file))
+
+(load key-mapping-file)
+
+;; 完全禁止初始 *scratch* 缓冲区的创建
+(setq initial-scratch-message nil
+      inhibit-startup-screen t
+      initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+
+;; 启动后立即关闭 *scratch* 缓冲区
+(add-hook 'after-init-hook
+          (lambda ()
+            (when (get-buffer "*scratch*")
+              (kill-buffer "*scratch*"))))
+
 (provide 'init)
 
 ;;; init.el ends here
