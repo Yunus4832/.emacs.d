@@ -14,6 +14,10 @@
 ;; 使用 dashboard 启动页
 (use-package dashboard
     :config
+    (setq dashboard-projects-backend 'projectile)
+    (setq dashboard-items '((projects . 5)         ;; 最近文件显示10条
+                            (recents . 10)         ;; 书签显示5条
+                            (bookmarks . 5)))      ;; 项目显示5条
     (dashboard-setup-startup-hook))
 
 ;; 使用 Powerline 状态栏
