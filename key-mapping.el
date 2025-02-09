@@ -35,6 +35,18 @@
   (my-leader-def
     :states 'normal
     "vr" 'git-gutter:revert-hunk) ;; 回滚当前 Hunk
+  (my-leader-def
+    :states 'normal
+    "vb" 'magit-status) ;; 打开 magit 工具窗口
+  (my-leader-def
+    :states 'normal
+    "vs" 'magit-push-to-remote) ;; 推送代码
+  (my-leader-def
+    :states 'normal
+    "vu" 'magit-pull) ;; 拉取和更新代码
+  (my-leader-def
+    :states 'normal
+    "vl" 'magit-log-all) ;; 提交记录
   ;; Buffer 切换
   (my-leader-def
     :states 'normal
