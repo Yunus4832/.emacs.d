@@ -5,6 +5,7 @@
 ;;; Code:
 
 (require 'use-package)
+(require 'treemacs)
 
 ;; 使用 general 进行按键映射
 (use-package general
@@ -63,6 +64,15 @@
   (my-leader-def
     :states 'normal
     "bl" 'helm-buffers-list) ;; buffer 列表
+  ;; 在 treemacs-mode 下定义快捷键
+  (general-define-key
+    :keymaps 'treemacs-mode-map
+    :states 'normal ;; 如果你在使用 evil-mode，指定状态为 normal
+    "ma" '(treemacs-create-file :which-key "Create File")
+    "md" '(treemacs-create-dir :which-key "Create Directory")
+    "mr" '(treemacs-rename :which-key "Rename")
+    "mm" '(treemacs-move :which-key "Move")
+    "mD" '(treemacs-delete :which-key "Delete"))
 )
 
 ;; 使用 helm-M-x 替代 M-x
