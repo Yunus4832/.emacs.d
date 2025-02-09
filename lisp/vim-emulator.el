@@ -30,6 +30,7 @@
   :config
   (setq evil-escape-key-sequence "jj")
   (setq evil-escape-delay 0.5)
+  (setq evil-escape-excluded-major-modes (list 'magit-status-mode 'magit-refs-mode 'magit-log-mode))
   (push 'visual evil-escape-excluded-states)
   (evil-escape-mode 1))
 
