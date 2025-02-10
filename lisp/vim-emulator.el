@@ -16,7 +16,9 @@
 ;; treemacs 的 evil 扩展
 (use-package treemacs-evil
   :defer 1
-  :after (treemacs evil-collection))
+  :after (treemacs evil-collection)
+  :config
+  (evil-set-initial-state 'treemacs-mode 'normal))
 
 ;; Evil 补充
 (use-package evil-collection
@@ -30,7 +32,7 @@
   :config
   (setq evil-escape-key-sequence "jj")
   (setq evil-escape-delay 0.5)
-  (setq evil-escape-excluded-major-modes (list 'magit-status-mode 'magit-refs-mode 'magit-log-mode))
+  (setq evil-escape-excluded-major-modes (list 'magit-status-mode 'magit-refs-mode 'magit-log-mode 'treemacs-mode))
   (push 'visual evil-escape-excluded-states)
   (evil-escape-mode 1))
 
