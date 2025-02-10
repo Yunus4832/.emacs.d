@@ -22,6 +22,9 @@
     ";e" (lambda () (interactive) (delete-other-windows) (dashboard-open))) ;; 打开最近访问文件列表
   (my-leader-def
     :states 'normal
+    ";a" 'magit-blame-addition) ;; 打开 Git blame
+  (my-leader-def
+    :states 'normal
     ";s" 'helm-projectile) ;; 搜索项目文件
   (my-leader-def
     :states 'normal
