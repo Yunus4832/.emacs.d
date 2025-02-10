@@ -19,6 +19,10 @@
 ;; 将 .gitignore 视为代码文件
 (add-to-list 'auto-mode-alist '("\\.gitignore\\'" . prog-mode))
 
+(setq default-file-name-coding-system 'utf-8)
+(setq coding-system-for-read 'utf-8)
+(setq coding-system-for-write 'utf-8)
+
 (provide 'general-setting)
 
 ;;; general-setting.el ends here
