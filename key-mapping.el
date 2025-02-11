@@ -50,7 +50,7 @@
     "vs" 'magit-push-to-remote) ;; 推送代码
   (my-leader-def
     :states 'normal
-    "vu" 'magit-pull) ;; 拉取和更新代码
+    "vu" 'magit-pull-branch) ;; 拉取和更新代码
   (my-leader-def
     :states 'normal
     "vl" 'magit-log-all) ;; 提交记录
