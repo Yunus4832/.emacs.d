@@ -33,11 +33,6 @@
 
 (load custom-file)
 
-;; 加载第三方的单文件软件包
-(let ((single-package-dir (expand-file-name "third-single-package" (file-name-directory load-file-name))))
-  (add-to-list 'load-path single-package-dir)
-  (mapc 'load (directory-files single-package-dir t "\\.el$")))
-
 ;; 加载 lisp 目录下的所有 el 文件
 (let ((lisp-dir (expand-file-name "lisp" (file-name-directory load-file-name))))
   (add-to-list 'load-path lisp-dir)

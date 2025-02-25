@@ -28,9 +28,10 @@
 
 ;; evil-escape 用于设置退出 insert 模式的按键映射
 (use-package evil-escape
+  :load-path "third-single-package"
   :after evil-collection
   :config
-  (setq evil-escape-key-sequence "jj")
+  (setq evil-escape-key-sequence (list (kbd "jj") (kbd "kk")))
   (setq evil-escape-delay 0.5)
   (setq evil-escape-excluded-major-modes (list 'magit-status-mode 'magit-refs-mode 'magit-log-mode 'treemacs-mode))
   (push 'visual evil-escape-excluded-states)

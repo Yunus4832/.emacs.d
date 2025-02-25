@@ -84,26 +84,29 @@
     (powerline-simplify-theme))
 
 ;; 使用 awesome-tab
-(require 'awesome-tab)
-(awesome-tab-mode t)
-(setq awesome-tab-show-tab-index t)
-(setq awesome-tab-height 120)
-(setq awesome-tab-display-icon nil)
-(defun awesome-tab-hide-tab (buffer-name)
-  "Which buffer will be hide, BUFFER-NAME is the tab buffer name to show."
-  (let ((name (format "%s" buffer-name)))
-    (or
-     (string-match "Treemacs" name)
-     (string-match "magit" name)
-     (string-match "dashboard" name)
-     (string-match "message" name)
-     (string-prefix-p "*epc" name)
-     (string-prefix-p "*helm" name)
-     (string-prefix-p "*Compile-Log*" name)
-     (string-prefix-p "*lsp" name)
-     (and (string-prefix-p "magit" name)
-               (not (file-name-extension name)))
-     )))
+(use-package awesome-tab
+    :load-path "third-single-package"
+    :config
+    (awesome-tab-mode t)
+    (setq awesome-tab-show-tab-index t)
+    (setq awesome-tab-height 120)
+    (setq awesome-tab-display-icon nil)
+    (defun awesome-tab-hide-tab (buffer-name)
+      "Which buffer will be hide, BUFFER-NAME is the tab buffer name to show."
+      (let ((name (format "%s" buffer-name)))
+        (or
+         (string-match "Treemacs" name)
+         (string-match "magit" name)
+         (string-match "dashboard" name)
+         (string-match "message" name)
+         (string-prefix-p "*epc" name)
+         (string-prefix-p "*helm" name)
+         (string-prefix-p "*Compile-Log*" name)
+         (string-prefix-p "*lsp" name)
+         (and (string-prefix-p "magit" name)
+                   (not (file-name-extension name)))
+         )))
+)
 
 ;; 设置字体
 (set-face-attribute 'default nil :family "Consolas NF" :height 120)
