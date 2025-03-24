@@ -70,6 +70,9 @@
   (my-leader-def
     :states 'normal
     "bl" 'helm-buffers-list) ;; buffer 列表
+  (my-leader-def
+    :states 'normal
+    "SPC s" 'avy-goto-char-timer) ;; buffer 内跳转
   ;; 在 treemacs-mode 下定义快捷键
   (general-define-key
     :keymaps 'treemacs-mode-map
