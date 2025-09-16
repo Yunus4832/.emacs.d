@@ -20,7 +20,7 @@
 ;; 如果 use-package 没有安装，则安装 use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
-  (package-install 'user-package))
+  (package-install 'use-package))
 
 ;; use-package 配置
 (require 'use-package)
