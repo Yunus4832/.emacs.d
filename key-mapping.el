@@ -73,6 +73,10 @@
   (my-leader-def
     :states 'normal
     "SPC s" 'avy-goto-char-timer) ;; buffer 内跳转
+  ;; 临时开关
+  (my-leader-def
+    :states 'normal
+    ",w" 'toggle-truncate-lines) ;; 开关软折行
   ;; 在 treemacs-mode 下定义快捷键
   (general-define-key
     :keymaps 'treemacs-mode-map

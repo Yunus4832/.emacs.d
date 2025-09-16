@@ -21,6 +21,7 @@
   (setq git-gutter:modified-sign "▋")                                  ;; 修改的行
   (setq git-gutter:added-sign "▋")                                     ;; 新增的行
   (setq git-gutter:deleted-sign "▋")                                   ;; 删除的行
+  (setq git-gutter:update-interval 1)                                  ;; 更新间隔
   (set-face-foreground 'git-gutter:modified "blue")                    ;; 修改的行颜色
   (set-face-foreground 'git-gutter:added "green")                      ;; 新增的行颜色
   (set-face-foreground 'git-gutter:deleted "gray")                     ;; 删除的行颜色
