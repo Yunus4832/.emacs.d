@@ -77,6 +77,9 @@
   (my-leader-def
     :states 'normal
     ",w" 'toggle-truncate-lines) ;; 开关软折行
+  (my-leader-def
+    :states 'normal
+    ",," '(lambda () (interactive) (find-file user-init-file))) ;; 打开配置文件
   ;; 在 treemacs-mode 下定义快捷键
   (general-define-key
     :keymaps 'treemacs-mode-map
