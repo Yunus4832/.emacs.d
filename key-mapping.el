@@ -29,6 +29,12 @@
   (my-leader-def
     :states 'normal
     ";f" 'format-all-buffer) ;; 格式化代码
+  (my-leader-def
+    :states 'normal
+    ";c" 'comment-line) ;; 注释代码
+  (my-leader-def
+    :states 'visual
+    ";c" 'comment-dwim) ;; 注释代码
   ;; 版本控制
   (my-leader-def
     :states 'normal
