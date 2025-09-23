@@ -86,18 +86,21 @@
   (my-leader-def
     :states 'normal
     ",," '(lambda () (interactive) (find-file user-init-file))) ;; 打开配置文件
+  ;; 切换终端
+  (general-def
+    "M-=" 'multi-term-dedicated-toggle)  ;; 切换终端
+  ;; 使用 helm-M-x 替代 M-x
+  (general-def
+    "M-x" 'helm-M-x)
   ;; 在 treemacs-mode 下定义快捷键
   (general-define-key
-    :keymaps 'treemacs-mode-map
-    :states 'normal ;; 如果你在使用 evil-mode，指定状态为 normal
-    "ma" '(treemacs-create-file :which-key "Create File")
-    "md" '(treemacs-create-dir :which-key "Create Directory")
-    "mr" '(treemacs-rename :which-key "Rename")
-    "mm" '(treemacs-move :which-key "Move")
-    "mD" '(treemacs-delete :which-key "Delete"))
-)
-
-;; 使用 helm-M-x 替代 M-x
-(global-set-key (kbd "M-x") 'helm-M-x)
+   :keymaps 'treemacs-mode-map
+   :states 'normal ;; 如果你在使用 evil-mode，指定状态为 normal
+   "ma" '(treemacs-create-file :which-key "Create File")
+   "md" '(treemacs-create-dir :which-key "Create Directory")
+   "mr" '(treemacs-rename :which-key "Rename")
+   "mm" '(treemacs-move :which-key "Move")
+   "mD" '(treemacs-delete :which-key "Delete"))
+  )
 
 ;;; key-mapping.el ends here

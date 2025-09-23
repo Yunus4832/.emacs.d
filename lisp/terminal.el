@@ -1,0 +1,16 @@
+;;; terminal.el --- 终端配置
+
+;;; Commentary:
+
+;;; Code:
+
+(require 'use-package)
+
+;; 终端工具
+(use-package multi-term
+  :ensure t
+  :custom
+  (multi-term-dedicated-select-after-open-p t)
+)
+
+;;; project-management.el ends here

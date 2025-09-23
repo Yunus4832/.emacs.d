@@ -22,6 +22,9 @@
 ;; 帮助窗口自动获取焦点
 (setq help-window-select t)
 
+;; 默认退出后台进程
+(setq confirm-kill-processes nil)
+
 (setq default-file-name-coding-system 'utf-8)
 (setq coding-system-for-read 'utf-8)
 (setq coding-system-for-write 'utf-8)

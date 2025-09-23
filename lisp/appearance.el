@@ -95,10 +95,8 @@
       "Which buffer will be hide, BUFFER-NAME is the tab buffer name to show."
       (let ((name (format "%s" buffer-name)))
         (or
+         (string-match "^\\*.*\\*$" name)
          (string-match "Treemacs" name)
-         (string-match "magit" name)
-         (string-match "dashboard" name)
-         (string-match "message" name)
          (string-prefix-p "*epc" name)
          (string-prefix-p "*helm" name)
          (string-prefix-p "*Compile-Log*" name)
