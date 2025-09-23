@@ -12,7 +12,4 @@
 ;; 启用全局模式（可选）
 (add-hook 'prog-mode-hook 'format-all-mode)
 
-;; 设置快捷键（可选）
-(global-set-key (kbd "C-c f") 'format-all-buffer)
-
 ;;; code-format.el ends here

@@ -19,7 +19,7 @@
   ;; IDE 功能
   (my-leader-def
     :states 'normal
-    ";e" (lambda () (interactive) (delete-other-windows) (dashboard-open))) ;; 打开最近访问文件列表
+    ";e" 'helm-recentf) ;; 打开最近访问文件列表
   (my-leader-def
     :states 'normal
     ";a" 'magit-blame-addition) ;; 打开 Git blame
