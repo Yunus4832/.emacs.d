@@ -11,6 +11,6 @@
   :ensure t
   :custom
   (multi-term-dedicated-select-after-open-p t)
-)
+  )
 
 ;;; project-management.el ends here

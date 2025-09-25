@@ -28,7 +28,7 @@
   (set-face-background 'git-gutter:modified "blue")                    ;; 修改的行颜色
   (set-face-background 'git-gutter:added "green")                      ;; 新增的行颜色
   (set-face-background 'git-gutter:deleted "gray")                     ;; 删除的行颜色
-)
+  )
 
 (provide 'version-control)
 

@@ -14,4 +14,3 @@
         avy-timeout-seconds 0.3))     ;; 「关键字输入完毕」信号的触发时间
 
 ;;; jump.el ends here
-

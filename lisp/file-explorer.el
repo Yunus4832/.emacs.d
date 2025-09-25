@@ -83,7 +83,7 @@
        (treemacs-git-mode 'simple)))
 
     (treemacs-hide-gitignored-files-mode -1))
-)
+  )
 
 ;; 为 treemacs 提供图标
 (use-package treemacs-nerd-icons
@@ -94,4 +94,3 @@
 (provide 'file-explorer)
 
 ;;; file-explorer.el ends here
-

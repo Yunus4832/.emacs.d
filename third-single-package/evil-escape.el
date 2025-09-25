@@ -118,32 +118,32 @@ If any of these functions return non nil, evil escape will be inhibited."
 (defun evil-escape-pre-command-hook ()
   "evil-escape pre-command hook."
   (with-demoted-errors "evil-escape: Error %S"
-      (when (evil-escape-p)
-        ;; Don't inhibit redisplay, else visual mode j key will not be updated.
-        (let* ((inhibit-redisplay nil)
-               (fontification-functions nil)
-               (modified (buffer-modified-p))
-               (inserted (evil-escape--insert))
-               (current-key (this-command-keys))
-               (all-sequences (evil-escape--all-sequences))
-               (matching-sequences (cl-loop for seq in all-sequences
-                                            when (equal current-key (substring seq 0 1))
-                                            collect seq))
-               (expected-second-keys (mapcar (lambda (s) (elt s 1)) matching-sequences))
-               (evt (read-event nil nil evil-escape-delay)))
-          (when inserted (evil-escape--delete))
-          (set-buffer-modified-p modified)
-          (cond
-           ((and (characterp evt)
-                 (member evt expected-second-keys))
-            (evil-repeat-stop)
-            (let ((esc-fun (evil-escape-func)))
-              (when esc-fun
-                (setq this-command esc-fun)
-                (setq this-original-command esc-fun))))
-           ((null evt))
-           (t (setq unread-command-events
-                    (append unread-command-events (list evt)))))))))
+    (when (evil-escape-p)
+      ;; Don't inhibit redisplay, else visual mode j key will not be updated.
+      (let* ((inhibit-redisplay nil)
+             (fontification-functions nil)
+             (modified (buffer-modified-p))
+             (inserted (evil-escape--insert))
+             (current-key (this-command-keys))
+             (all-sequences (evil-escape--all-sequences))
+             (matching-sequences (cl-loop for seq in all-sequences
+                                          when (equal current-key (substring seq 0 1))
+                                          collect seq))
+             (expected-second-keys (mapcar (lambda (s) (elt s 1)) matching-sequences))
+             (evt (read-event nil nil evil-escape-delay)))
+        (when inserted (evil-escape--delete))
+        (set-buffer-modified-p modified)
+        (cond
+         ((and (characterp evt)
+               (member evt expected-second-keys))
+          (evil-repeat-stop)
+          (let ((esc-fun (evil-escape-func)))
+            (when esc-fun
+              (setq this-command esc-fun)
+              (setq this-original-command esc-fun))))
+         ((null evt))
+         (t (setq unread-command-events
+                  (append unread-command-events (list evt)))))))))
 
 (defun evil-escape--evil-repeat (fn &rest args)
   "Bind `evil-escape-inhibit' to t."
@@ -177,7 +177,7 @@ If any of these functions return non nil, evil escape will be inhibited."
        (or (not evil-escape-enable-only-for-major-modes)
            (memq major-mode evil-escape-enable-only-for-major-modes))
        (cl-loop for seq in (evil-escape--all-sequences)
-           thereis (equal (this-command-keys) (substring seq 0 1)))
+		thereis (equal (this-command-keys) (substring seq 0 1)))
        (not (cl-reduce (lambda (x y) (or x y))
                        (mapcar 'funcall evil-escape-inhibit-functions)
                        :initial-value nil))))

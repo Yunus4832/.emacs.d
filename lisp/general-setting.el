@@ -32,4 +32,3 @@
 (provide 'general-setting)
 
 ;;; general-setting.el ends here
-

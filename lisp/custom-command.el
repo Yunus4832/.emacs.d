@@ -5,4 +5,3 @@
 ;;; Code:
 
 ;;; custom-command.el ends here
-
