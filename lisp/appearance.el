@@ -101,7 +101,7 @@
        (string-prefix-p "*helm" name)
        (string-prefix-p "*Compile-Log*" name)
        (string-prefix-p "*lsp" name)
-       (string-prefix-p "magit" name))))))
+       (string-prefix-p "magit" name)))))
 
 ;; 设置字体
 (when (display-graphic-p
