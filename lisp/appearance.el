@@ -104,8 +104,9 @@
        (string-prefix-p "magit" name)))))
 
 ;; 设置字体
-(set-face-attribute 'default nil :family "Consolas NF" :height 120)
-(set-fontset-font t 'han (font-spec :family "新宋体" :height 120))
+(when (window-system)
+  (set-face-attribute 'default nil :family "Consolas NF" :height 120)
+  (set-fontset-font t 'han (font-spec :family "新宋体" :height 120)))
 
   ;; 代码模式和文本模式显示相对行号
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
