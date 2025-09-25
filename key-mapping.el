@@ -96,6 +96,8 @@
   (general-define-key
    :keymaps 'treemacs-mode-map
    :states 'normal ;; 如果你在使用 evil-mode，指定状态为 normal
+   "RET" #'treemacs-RET-action
+   "C-m" #'treemacs-RET-action
    "ma" '(treemacs-create-file :which-key "Create File")
    "md" '(treemacs-create-dir :which-key "Create Directory")
    "mr" '(treemacs-rename :which-key "Rename")

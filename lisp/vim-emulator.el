@@ -8,17 +8,18 @@
 
 ;; 安装 evil 模拟软件包
 (use-package evil
-    :init
-    (setq evil-want-keybinding nil)
-    :config
-    (evil-mode 1))
+  :init
+  (setq evil-want-keybinding nil)
+  :config
+  (evil-mode 1))
 
 ;; treemacs 的 evil 扩展
 (use-package treemacs-evil
   :defer 1
   :after (treemacs evil-collection)
   :config
-  (evil-set-initial-state 'treemacs-mode 'normal))
+  (evil-set-initial-state 'treemacs-mode 'normal)
+  )
 
 ;; Evil 补充
 (use-package evil-collection
