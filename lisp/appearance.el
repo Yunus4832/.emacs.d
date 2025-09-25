@@ -113,5 +113,6 @@
   (defvar display-line-numbers-type 'relative)
 
   (provide 'appearance)
+  )
 
 ;;; appearance.el ends here
