@@ -1,4 +1,4 @@
-;;; terminal.el --- 终端配置
+;;; terminal.el --- 终端配置  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

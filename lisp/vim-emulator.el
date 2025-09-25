@@ -1,4 +1,4 @@
-;;; vim-emulator.el --- vim 模拟
+;;; vim-emulator.el --- vim 模拟  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

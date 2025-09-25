@@ -1,4 +1,4 @@
-;;; early-init.el --- GUI 启动前配置
+;;; early-init.el --- GUI 启动前配置  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

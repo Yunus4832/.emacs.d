@@ -1,4 +1,4 @@
-;;; key-mapping.el --- 按键映射配置
+;;; key-mapping.el --- 按键映射配置  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

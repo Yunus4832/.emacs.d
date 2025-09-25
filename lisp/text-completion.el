@@ -1,4 +1,4 @@
-;;; text-completion.el --- 文本补全
+;;; text-completion.el --- 文本补全  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

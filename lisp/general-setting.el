@@ -1,4 +1,4 @@
-;;; general-setting --- 通用设置
+;;; general-setting --- 通用设置  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

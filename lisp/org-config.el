@@ -1,4 +1,4 @@
-;;; org-config.el --- org-mode 的配置
+;;; org-config.el --- org-mode 的配置  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

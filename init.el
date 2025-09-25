@@ -1,4 +1,4 @@
-;;; init.el --- Emacs 启动配置文件
+;;; init.el --- Emacs 启动配置文件  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

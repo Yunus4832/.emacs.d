@@ -1,4 +1,4 @@
-;;; appearance.el --- 外观配置
+;;; appearance.el --- 外观配置  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

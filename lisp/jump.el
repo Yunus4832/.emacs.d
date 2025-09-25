@@ -1,4 +1,4 @@
-;;; jump.el --- 代码内跳转
+;;; jump.el --- 代码内跳转  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

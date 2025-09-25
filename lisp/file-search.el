@@ -1,4 +1,4 @@
-;;;; file-search.el --- 文件搜索配置
+;;;; file-search.el --- 文件搜索配置  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

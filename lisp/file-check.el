@@ -1,4 +1,4 @@
-;;; file-check.el --- 文件检查
+;;; file-check.el --- 文件检查  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

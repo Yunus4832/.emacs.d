@@ -1,4 +1,4 @@
-;;; code-format.el --- 代码格式化
+;;; code-format.el --- 代码格式化  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

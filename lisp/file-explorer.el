@@ -1,4 +1,4 @@
-;;; file-explorer.el --- 文件浏览器配置
+;;; file-explorer.el --- 文件浏览器配置  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

@@ -1,4 +1,4 @@
-;;; version-control.el --- 版本控制设置
+;;; version-control.el --- 版本控制设置  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

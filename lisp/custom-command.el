@@ -1,4 +1,4 @@
-;;; custom-command.el --- 自定义命令
+;;; custom-command.el --- 自定义命令  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

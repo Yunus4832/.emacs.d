@@ -1,4 +1,4 @@
-;;; project-management.el --- 项目管理
+;;; project-management.el --- 项目管理  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
