@@ -9,8 +9,8 @@
 ;; 使用 helm 搜索文件
 (use-package helm
   :config
-  (setq helm-echo-input-in-header-line t)
   (setq helm-display-function 'helm-display-buffer-in-own-frame)
+  (setq helm-echo-input-in-header-line t)
   (helm-mode 1)
   )
 
