@@ -45,17 +45,6 @@
 
 (load key-mapping-file)
 
-;; 完全禁止初始 *scratch* 缓冲区的创建
-(setq initial-scratch-message nil
-      inhibit-startup-screen t
-      initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
-
-;; 启动后立即关闭 *scratch* 缓冲区
-(add-hook 'after-init-hook
-          (lambda ()
-            (when (get-buffer "*scratch*")
-              (kill-buffer "*scratch*"))))
-
 (provide 'init)
 
 ;;; init.el ends here

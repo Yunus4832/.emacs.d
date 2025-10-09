@@ -13,6 +13,7 @@
 
 ;; 使用 dashboard 启动页
 (use-package dashboard
+  :if (< (length command-line-args) 2)
   :config
   (setq dashboard-projects-backend 'projectile)
   (setq dashboard-items '((projects . 5)         ;; 最近文件显示10条
