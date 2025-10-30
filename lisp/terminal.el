@@ -13,4 +13,6 @@
   (multi-term-dedicated-select-after-open-p t)
   )
 
+(provide 'terminal)
+
 ;;; project-management.el ends here

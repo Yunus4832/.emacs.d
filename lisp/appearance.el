@@ -113,10 +113,10 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (defvar display-line-numbers-type 'relative)
 
-(provide 'appearance)
-
 ;; 设置括号匹配的高亮显示
 (setq show-paren-highlight-openparen nil)
 (set-face-attribute 'show-paren-match nil :background "green" :foreground (face-attribute 'default :background nil))
+
+(provide 'appearance)
 
 ;;; appearance.el ends here

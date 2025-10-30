@@ -12,4 +12,6 @@
   :ensure t
   :hook (after-init . global-clipetty-mode))
 
+(provide 'clipboard)
+
 ;;; clipboard.el ends here

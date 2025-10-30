@@ -12,4 +12,6 @@
 ;; 启用全局模式（可选）
 (add-hook 'prog-mode-hook 'format-all-mode)
 
+(provide 'code-format)
+
 ;;; code-format.el ends here

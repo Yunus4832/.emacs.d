@@ -13,4 +13,6 @@
         avy-all-windows t             ;; 搜索所有 window，即所有「可视范围」
         avy-timeout-seconds 0.3))     ;; 「关键字输入完毕」信号的触发时间
 
+(provide 'jump)
+
 ;;; jump.el ends here

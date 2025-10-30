@@ -24,5 +24,9 @@
 		  (find-file path)
 		  (delete-other-windows)))))
 
+;; 避免折叠空行
+(setq org-cycle-separator-lines -1)
+
+(provide 'org-config)
 
 ;;; org-config.el ends here
