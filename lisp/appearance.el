@@ -109,10 +109,14 @@
   (set-face-attribute 'default nil :family "Consolas NF" :height 120)
   (set-fontset-font t 'han (font-spec :family "新宋体" :height 120)))
 
-  ;; 代码模式和文本模式显示相对行号
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-  (defvar display-line-numbers-type 'relative)
+;; 代码模式和文本模式显示相对行号
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+(defvar display-line-numbers-type 'relative)
 
-  (provide 'appearance)
+(provide 'appearance)
+
+;; 设置括号匹配的高亮显示
+(setq show-paren-highlight-openparen nil)
+(set-face-attribute 'show-paren-match nil :background "green" :foreground (face-attribute 'default :background nil))
 
 ;;; appearance.el ends here
