@@ -10,8 +10,6 @@
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
-  (when (not window-system)
-    (setq evil-want-C-i-jump nil))
   :config
   (evil-mode 1))
 

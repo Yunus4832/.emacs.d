@@ -92,10 +92,17 @@
   ;; 使用 helm-M-x 替代 M-x
   (general-def
     "M-x" 'helm-M-x)
+  ;; org mode TAB 和 RET 切换标题折叠
+  (general-define-key
+   :keymaps 'org-mode-map
+   :states 'normal
+   :predicate (lambda () (not window-system))
+   "RET" #'org-cycle
+   "TAB" #'org-cycle)
   ;; 在 treemacs-mode 下定义快捷键
   (general-define-key
    :keymaps 'treemacs-mode-map
-   :states 'normal ;; 如果你在使用 evil-mode，指定状态为 normal
+   :states 'normal
    "RET" #'treemacs-RET-action
    "C-m" #'treemacs-RET-action
    "ma" '(treemacs-create-file :which-key "Create File")
