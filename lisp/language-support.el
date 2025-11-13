@@ -12,6 +12,9 @@
     :mode ("\\.yml\\'" . yaml-mode)
           ("\\.yaml\\'" . yaml-mode))
 
+;; json 支持
+(use-package json-mode :ensure t)
+
 (provide 'language-support)
 
 ;;; language-support.el ends here
