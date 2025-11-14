@@ -26,7 +26,8 @@
 (setq confirm-kill-processes nil)
 
 ;; 默认开启成对符号匹配
-(set-default electric-pair-mode t)
+(setq-default electric-pair-mode t)
+(electric-pair-mode 1)
 
 (setq default-file-name-coding-system 'utf-8)
 (setq coding-system-for-read 'utf-8)
