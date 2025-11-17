@@ -109,7 +109,8 @@
    "md" '(treemacs-create-dir :which-key "Create Directory")
    "mr" '(treemacs-rename :which-key "Rename")
    "mm" '(treemacs-move :which-key "Move")
-   "mD" '(treemacs-delete :which-key "Delete"))
+   "mD" '(treemacs-delete :which-key "Delete")
+   "f" #'treemacs-hide-gitignored-files-mode)
   )
 
 ;;; key-mapping.el ends here

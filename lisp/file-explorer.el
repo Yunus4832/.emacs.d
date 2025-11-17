@@ -82,7 +82,7 @@
       (`(t . _)
        (treemacs-git-mode 'simple)))
 
-    (treemacs-hide-gitignored-files-mode -1))
+    (treemacs-hide-gitignored-files-mode 1))
   )
 
 ;; 为 treemacs 提供图标
