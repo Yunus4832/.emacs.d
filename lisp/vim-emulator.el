@@ -38,6 +38,13 @@
   (push 'visual evil-escape-excluded-states)
   (evil-escape-mode 1))
 
+;; * 和 # 支持搜索选中的内容
+(use-package evil-visualstar
+  :ensure t
+  :after evil
+  :config
+  (global-evil-visualstar-mode))
+
 (provide 'vim-emulator)
 
 ;;; vim-emulator.el ends here
