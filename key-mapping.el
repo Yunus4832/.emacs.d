@@ -28,7 +28,7 @@
     ";s" 'helm-projectile) ;; 搜索项目文件
   (my-leader-def
     :states 'visual
-    ";s" 'helm-projectile) ;; 搜索项目文件
+    ";s" 'helm-projectile-ag) ;; 搜索项目文件内容
   (my-leader-def
     :states 'normal
     ";S" 'helm-projectile-ag) ;; 搜索项目文件内容
