@@ -101,6 +101,8 @@
   ;; 使用 helm-M-x 替代 M-x
   (general-def
     "M-x" 'helm-M-x)
+  (general-def helm-map
+    "<escape>" #'helm-keyboard-quit)
   ;; org mode TAB 和 RET 切换标题折叠
   (general-define-key
    :keymaps 'org-mode-map
