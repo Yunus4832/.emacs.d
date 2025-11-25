@@ -6,6 +6,7 @@
 
 (require 'use-package)
 (require 'treemacs)
+(require 'custom-command)
 
 ;; 使用 general 进行按键映射
 (use-package general
@@ -101,8 +102,20 @@
   ;; 使用 helm-M-x 替代 M-x
   (general-def
     "M-x" 'helm-M-x)
+  ;; 退出 helm 使用 ESC 或者再次按下 M-x
   (general-def helm-map
     "<escape>" #'helm-keyboard-quit)
+  (general-def helm-map
+    "M-x" #'helm-keyboard-quit)
+  ;; 如果没有打开文件，dashboard 使用 q 直接退出
+  (general-def
+    :keymaps 'dashboard-mode-map
+    :states 'normal
+    "q" (lambda ()
+	  (interactive)
+	  (if (my/has-file-buffers-p)
+	      (quit-window)
+	    (save-buffers-kill-terminal))))
   ;; org mode TAB 和 RET 切换标题折叠
   (general-define-key
    :keymaps 'org-mode-map

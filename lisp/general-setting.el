@@ -29,6 +29,9 @@
 (setq-default electric-pair-mode t)
 (electric-pair-mode 1)
 
+;; 默认关闭软折行
+(setq-default truncate-lines nil)
+
 (setq default-file-name-coding-system 'utf-8)
 (setq coding-system-for-read 'utf-8)
 (setq coding-system-for-write 'utf-8)

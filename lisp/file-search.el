@@ -9,7 +9,9 @@
 ;; 使用 helm 搜索文件
 (use-package helm
   :config
-  (setq helm-display-function 'helm-display-buffer-in-own-frame)
+  ;; (setq helm-display-function 'helm-display-buffer-in-own-frame)
+  (setq helm-default-display-buffer-functions '(display-buffer-in-side-window))
+  (setq helm-display-buffer-default-height 40)
   (setq helm-echo-input-in-header-line t)
   (helm-mode 1)
   )
