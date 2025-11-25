@@ -116,6 +116,15 @@
 	  (if (my/has-file-buffers-p)
 	      (quit-window)
 	    (save-buffers-kill-terminal))))
+  ;; compilation-mode 在 evil-mode 重新映射 n/p
+  (general-def
+    :keymaps 'compilation-mode-map
+    :states 'normal
+    "C-n" #'next-error-no-select)
+  (general-def
+    :keymaps 'compilation-mode-map
+    :states 'normal
+    "C-p" #'previous-error-no-select)
   ;; org mode TAB 和 RET 切换标题折叠
   (general-define-key
    :keymaps 'org-mode-map
