@@ -96,6 +96,35 @@
   (my-leader-def
     :states 'normal
     ",," '(lambda () (interactive) (find-file user-init-file))) ;; 打开配置文件
+  ;; compile 命令相关
+  ;; 打开 compilation 缓冲区
+  (my-leader-def
+    :states 'normal
+    "co" (lambda () (interactive)
+	   (let ((buf (get-buffer-create "*compilation*")))
+	     (with-current-buffer buf
+	       (unless (eq major-mode 'compilation-mode)
+		 (compilation-mode)))
+	     (display-buffer buf 'display-buffer-at-bottom))))
+  ;; 关闭 compilation 缓冲区
+  (my-leader-def
+    :states 'normal
+    "cc" (lambda () (interactive)
+	   (let ((win (get-buffer-window "*compilation*")))
+	     (when win
+	       (quit-window nil win)))))
+  ;; 下一个错误
+  (my-leader-def
+    :states 'normal
+    "cn" 'next-error)
+  ;; 上一个错误
+  (my-leader-def
+    :states 'normal
+    "cp" 'previous-error)
+  ;; 编译生成 compilation 缓冲区
+  (my-leader-def
+    :states 'normal
+    "cm" 'compile)
   ;; 切换终端
   (general-def
     "M-=" 'multi-term-dedicated-toggle)  ;; 切换终端
@@ -116,15 +145,6 @@
 	  (if (my/has-file-buffers-p)
 	      (quit-window)
 	    (save-buffers-kill-terminal))))
-  ;; compilation-mode 在 evil-mode 重新映射 n/p
-  (general-def
-    :keymaps 'compilation-mode-map
-    :states 'normal
-    "C-n" #'next-error-no-select)
-  (general-def
-    :keymaps 'compilation-mode-map
-    :states 'normal
-    "C-p" #'previous-error-no-select)
   ;; org mode TAB 和 RET 切换标题折叠
   (general-define-key
    :keymaps 'org-mode-map
