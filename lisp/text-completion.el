@@ -21,11 +21,11 @@
   (defun company-backend-with-yas (backends)
     "Add :with company-yasnippet to company BACKENDS."
     (if (and (listp backends) (memq 'company-yasnippet backends))
-	backends
+        backends
       (append (if (consp backends)
-		  backends
-		(list backends))
-	      '(:with company-yasnippet))))
+                  backends
+                (list backends))
+              '(:with company-yasnippet))))
   (setq company-backends (mapcar #'company-backend-with-yas company-backends))
   )
 

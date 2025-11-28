@@ -7,3 +7,4 @@
 !early-init.el
 !key-mapping.el
 !.gitignore
+!lite-emacs.el

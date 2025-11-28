@@ -21,8 +21,8 @@
 ;; 打开文件链接独占框架
 (setq org-link-frame-setup
       `((file . (lambda (path)
-		  (find-file path)
-		  (delete-other-windows)))))
+                  (find-file path)
+                  (delete-other-windows)))))
 
 ;; 避免折叠空行
 (setq org-cycle-separator-lines -1)

@@ -11,108 +11,135 @@
 ;; 使用 general 进行按键映射
 (use-package general
   :config
-  (general-create-definer my-leader-def :prefix "SPC") ;; 设置 Leader 键为空格
+  ;; 设置 Leader 键为空格
+  (general-create-definer my-leader-def :prefix "SPC")
   ;; leader 按键绑定
   ;; 文件浏览器
+  ;; 绑定 SPC f 到 treemacs-select-window
   (my-leader-def
     :states 'normal
-    "f" 'treemacs-select-window)  ;; 绑定 SPC f 到 treemacs-select-window
+    "f" 'treemacs-select-window)
   ;; IDE 功能
+  ;; 打开最近访问文件列表
   (my-leader-def
     :states 'normal
-    ";e" 'helm-recentf) ;; 打开最近访问文件列表
+    ";e" 'helm-recentf)
+  ;; 打开 Git blame
   (my-leader-def
     :states 'normal
-    ";a" 'magit-blame-addition) ;; 打开 Git blame
+    ";a" 'magit-blame-addition)
+  ;; 搜索项目文件
   (my-leader-def
     :states 'normal
-    ";s" 'helm-projectile) ;; 搜索项目文件
+    ";s" 'helm-projectile)
+  ;; 搜索项目文件内容
   (my-leader-def
     :states 'visual
-    ";s" 'helm-projectile-ag) ;; 搜索项目文件内容
+    ";s" 'helm-projectile-ag)
+  ;; 搜索项目文件内容
   (my-leader-def
     :states 'normal
-    ";S" 'helm-projectile-ag) ;; 搜索项目文件内容
+    ";S" 'helm-projectile-ag)
+  ;; 搜索项目文件内容
   (my-leader-def
     :states 'visual
-    ";S" 'helm-projectile-ag) ;; 搜索项目文件内容
+    ";S" 'helm-projectile-ag)
+  ;; 格式化代码
   (my-leader-def
     :states 'normal
-    ";f" 'format-all-buffer) ;; 格式化代码
+    ";f" 'format-all-buffer)
+  ;; 注释代码
   (my-leader-def
     :states 'normal
-    ";c" 'comment-line) ;; 注释代码
+    ";c" 'comment-line)
+  ;; 注释代码
   (my-leader-def
     :states 'visual
-    ";c" 'comment-dwim) ;; 注释代码
+    ";c" 'comment-dwim)
   ;; 版本控制
+  ;; 跳转到下一个 Hunk
   (my-leader-def
     :states 'normal
-    "vn" 'git-gutter:next-hunk) ;; 跳转到下一个 Hunk
+    "vn" 'git-gutter:next-hunk)
+  ;; 跳转到上一个 Hunk
   (my-leader-def
     :states 'normal
-    "vp" 'git-gutter:previous-hunk) ;; 跳转到上一个 Hunk
+    "vp" 'git-gutter:previous-hunk)
+  ;; 回滚当前 Hunk
   (my-leader-def
     :states 'normal
-    "vr" 'git-gutter:revert-hunk) ;; 回滚当前 Hunk
+    "vr" 'git-gutter:revert-hunk)
+  ;; 打开 magit 工具窗口
   (my-leader-def
     :states 'normal
-    "vv" 'magit-status) ;; 打开 magit 工具窗口
+    "vv" 'magit-status)
+  ;; 打开 magit 工具窗口
   (my-leader-def
     :states 'normal
-    "vc" 'magit-status) ;; 打开 magit 工具窗口
+    "vc" 'magit-status)
+  ;; 推送代码
   (my-leader-def
     :states 'normal
-    "vs" 'magit-push-to-remote) ;; 推送代码
+    "vs" 'magit-push-to-remote)
+  ;; 拉取和更新代码
   (my-leader-def
     :states 'normal
-    "vu" 'magit-pull-branch) ;; 拉取和更新代码
+    "vu" 'magit-pull-branch)
+  ;; 提交记录
   (my-leader-def
     :states 'normal
-    "vl" 'magit-log-all) ;; 提交记录
+    "vl" 'magit-log-all)
   ;; Buffer 切换
+  ;; 下一个 Buffer
   (my-leader-def
     :states 'normal
-    "bn" 'awesome-tab-forward-tab) ;; 下一个 Buffer
+    "bn" 'awesome-tab-forward-tab)
+  ;; 上一个 Buffer
   (my-leader-def
     :states 'normal
-    "bp" 'awesome-tab-backward-tab) ;; 上一个 Buffer
+    "bp" 'awesome-tab-backward-tab)
+  ;; 最近访问的 Buffer
   (my-leader-def
     :states 'normal
-    "bb" 'evil-switch-to-windows-last-buffer) ;; 最近访问的 Buffer
+    "bb" 'evil-switch-to-windows-last-buffer)
+  ;; 删除当前 Buffer
   (my-leader-def
     :states 'normal
-    "bd" 'evil-delete-buffer) ;; 删除当前 Buffer
+    "bd" 'evil-delete-buffer)
+  ;; buffer 列表
   (my-leader-def
     :states 'normal
-    "bl" 'helm-buffers-list) ;; buffer 列表
+    "bl" 'helm-buffers-list)
+  ;; buffer 内跳转
   (my-leader-def
     :states 'normal
-    "SPC s" 'avy-goto-char-timer) ;; buffer 内跳转
+    "SPC s" 'avy-goto-char-timer)
   ;; 临时开关
+  ;; 开关软折行
   (my-leader-def
     :states 'normal
-    ",w" 'toggle-truncate-lines) ;; 开关软折行
+    ",w" 'toggle-truncate-lines)
+  ;; 打开配置文件
   (my-leader-def
     :states 'normal
-    ",," '(lambda () (interactive) (find-file user-init-file))) ;; 打开配置文件
+    ",," '(lambda () (interactive) (find-file user-init-file)))
   ;; compile 命令相关
   ;; 打开 compilation 缓冲区
   (my-leader-def
     :states 'normal
     "co" (lambda () (interactive)
-	   (let ((buf (get-buffer-create "*compilation*")))
-	     (with-current-buffer buf
-	       (unless (eq major-mode 'compilation-mode)
-		 (compilation-mode)))
-	     (display-buffer buf 'display-buffer-at-bottom))))
+	       (let ((buf (get-buffer-create "*compilation*")))
+	         (with-current-buffer buf
+	           (unless (eq major-mode 'compilation-mode)
+		         (compilation-mode)))
+	         (display-buffer buf 'display-buffer-at-bottom))))
   ;; 关闭 compilation 缓冲区
   (my-leader-def
     :states 'normal
     "cc" (lambda () (interactive)
-	   (let ((win (get-buffer-window "*compilation*")))
-	     (when win
-	       (quit-window nil win)))))
+	       (let ((win (get-buffer-window "*compilation*")))
+	         (when win
+	           (quit-window nil win)))))
   ;; 下一个错误
   (my-leader-def
     :states 'normal
@@ -141,10 +168,10 @@
     :keymaps 'dashboard-mode-map
     :states 'normal
     "q" (lambda ()
-	  (interactive)
-	  (if (my/has-file-buffers-p)
-	      (quit-window)
-	    (save-buffers-kill-terminal))))
+	      (interactive)
+	      (if (my/has-file-buffers-p)
+	          (quit-window)
+	        (save-buffers-kill-terminal))))
   ;; org mode TAB 和 RET 切换标题折叠
   (general-define-key
    :keymaps 'org-mode-map
