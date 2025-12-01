@@ -6,21 +6,20 @@
 
 (require 'use-package)
 
-;; 使用 helm 搜索文件
-(use-package helm
+;; ivy 搜索补全框架
+(use-package ivy
+  :ensure t
   :config
-  ;; (setq helm-display-function 'helm-display-buffer-in-own-frame)
-  (setq helm-default-display-buffer-functions '(display-buffer-in-side-window))
-  (setq helm-display-buffer-default-height 40)
-  (setq helm-echo-input-in-header-line t)
-  (helm-mode 1)
-  )
+  (ivy-mode))
 
-;; 使用 helm-projectile
-(use-package helm-projectile
-  :if (functionp 'helm)
+;; 内容搜索 
+(use-package counsel
+  :ensure t
   :config
-  (helm-projectile-on))
+  (counsel-mode))
+
+;; 使用 ivy 渐进式搜索
+(use-package swiper)
 
 (provide 'file-search)
 

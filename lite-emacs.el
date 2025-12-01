@@ -7,21 +7,17 @@
 (require 'package)
 
 ;; 关闭菜单栏
-(menu-bar-mode -1)
+(menu-bar-mode 0)
 
 ;; 关闭滚动条
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode -1))
+(scroll-bar-mode -1)
 
 ;; 关闭工具栏
-(when (fboundp 'tool-bar-mode)
-  (tool-bar-mode -1))
+(tool-bar-mode -1)
 
-;; 设置默认的窗口列宽 100 列, 背景黑色，前景白色
-(when (fboundp 'scroll-bar-mode)
-  (setq default-frame-alist '((width . 100)
-                              (background-color . "#272822")
-                              (foreground-color . "white"))))
+;; 启用 Emacs 内置补全 ido
+(ido-mode 1)
+(ido-everywhere 1)
 
 ;; 初始化包管理器
 (package-initialize)
@@ -73,11 +69,6 @@
 (require 'viper)
 (viper-mode)
 
-;; 设置字体
-(when (window-system)
-  (set-face-attribute 'default nil :family "Consolas NF" :height 120)
-  (set-fontset-font t 'han (font-spec :family "新宋体" :height 120)))
-
 ;; 代码模式和文本模式显示相对行号
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (defvar display-line-numbers-type 'relative)
@@ -106,6 +97,9 @@
                                    (quit-window nil win)))))
      (define-key viper-vi-global-user-map (kbd "SPC c n") 'next-error)
      (define-key viper-vi-global-user-map (kbd "SPC c p") 'previous-error)
-     (define-key viper-vi-global-user-map (kbd "SPC c m") 'compile)))
+     (define-key viper-vi-global-user-map (kbd "SPC c m") 'compile)
+     (define-key viper-emacs-global-user-map (kbd "C-h") 'help-command)
+     (define-key viper-insert-global-user-map (kbd "C-h") 'help-command)
+     (define-key viper-vi-global-user-map (kbd "C-h") 'help-command)))
 
 ;;; lite-emacs.el ends here

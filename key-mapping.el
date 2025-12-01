@@ -23,7 +23,7 @@
   ;; 打开最近访问文件列表
   (my-leader-def
     :states 'normal
-    ";e" 'helm-recentf)
+    ";e" 'counsel-recentf)
   ;; 打开 Git blame
   (my-leader-def
     :states 'normal
@@ -31,19 +31,19 @@
   ;; 搜索项目文件
   (my-leader-def
     :states 'normal
-    ";s" 'helm-projectile)
+    ";s" 'counsel-find-file)
   ;; 搜索项目文件内容
   (my-leader-def
     :states 'visual
-    ";s" 'helm-projectile-ag)
+    ";s" 'counsel-rg)
   ;; 搜索项目文件内容
   (my-leader-def
     :states 'normal
-    ";S" 'helm-projectile-ag)
+    ";S" 'counsel-rg)
   ;; 搜索项目文件内容
   (my-leader-def
     :states 'visual
-    ";S" 'helm-projectile-ag)
+    ";S" 'counsel-rg)
   ;; 格式化代码
   (my-leader-def
     :states 'normal
@@ -109,7 +109,7 @@
   ;; buffer 列表
   (my-leader-def
     :states 'normal
-    "bl" 'helm-buffers-list)
+    "bl" 'counsel-buffer-or-recentf)
   ;; buffer 内跳转
   (my-leader-def
     :states 'normal
@@ -155,14 +155,6 @@
   ;; 切换终端
   (general-def
     "M-=" 'multi-term-dedicated-toggle)  ;; 切换终端
-  ;; 使用 helm-M-x 替代 M-x
-  (general-def
-    "M-x" 'helm-M-x)
-  ;; 退出 helm 使用 ESC 或者再次按下 M-x
-  (general-def helm-map
-    "<escape>" #'helm-keyboard-quit)
-  (general-def helm-map
-    "M-x" #'helm-keyboard-quit)
   ;; 如果没有打开文件，dashboard 使用 q 直接退出
   (general-def
     :keymaps 'dashboard-mode-map
