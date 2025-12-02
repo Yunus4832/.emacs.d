@@ -16,9 +16,6 @@
 ;; 开启全局本地文件自动保存
 (auto-save-visited-mode t)
 
-;; 将 .gitignore 视为代码文件
-(add-to-list 'auto-mode-alist '("\\.gitignore\\'" . prog-mode))
-
 ;; 帮助窗口自动获取焦点
 (setq help-window-select t)
 

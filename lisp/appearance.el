@@ -109,8 +109,21 @@
   (set-face-attribute 'default nil :family "Consolas NF" :height 120)
   (set-fontset-font t 'han (font-spec :family "新宋体" :height 120)))
 
-;; 代码模式和文本模式显示相对行号
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+;; 代码模式和文本模式显示行号
+(dolist (line-number-hook '(prog-mode-hook
+			    text-mode-hook
+			    conf-mode-hook
+			    lisp-interaction-mode-hook))
+  (add-hook line-number-hook 'display-line-numbers-mode))
+
+;; 所有打开的文件都显示行号
+(defun my-line-numbers-for-files ()
+  (when buffer-file-name
+    (display-line-numbers-mode 1)))
+
+(add-hook 'after-change-major-mode-hook #'my-line-numbers-for-files)
+
+;; 使用相对行号
 (defvar display-line-numbers-type 'relative)
 
 ;; 设置括号匹配的高亮显示
