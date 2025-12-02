@@ -10,10 +10,12 @@
 (menu-bar-mode 0)
 
 ;; 关闭滚动条
-(scroll-bar-mode -1)
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode 0))
 
 ;; 关闭工具栏
-(tool-bar-mode -1)
+(when (fboundp 'scroll-bar-mode)
+  (tool-bar-mode 0))
 
 ;; 启用 Emacs 内置补全 ido
 (ido-mode 1)
