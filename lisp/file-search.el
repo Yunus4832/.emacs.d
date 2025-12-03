@@ -12,7 +12,7 @@
   :config
   (ivy-mode))
 
-;; 内容搜索 
+;; 内容搜索
 (use-package counsel
   :ensure t
   :config

@@ -119,6 +119,10 @@
   (my-leader-def
     :states 'normal
     ",w" 'toggle-truncate-lines)
+  ;; 开关显示空白符号
+  (my-leader-def
+    :states 'normal
+    ",l" 'global-whitespace-mode)
   ;; 打开配置文件
   (my-leader-def
     :states 'normal
@@ -128,18 +132,18 @@
   (my-leader-def
     :states 'normal
     "co" (lambda () (interactive)
-	       (let ((buf (get-buffer-create "*compilation*")))
-	         (with-current-buffer buf
-	           (unless (eq major-mode 'compilation-mode)
-		         (compilation-mode)))
-	         (display-buffer buf 'display-buffer-at-bottom))))
+           (let ((buf (get-buffer-create "*compilation*")))
+             (with-current-buffer buf
+               (unless (eq major-mode 'compilation-mode)
+                 (compilation-mode)))
+             (display-buffer buf 'display-buffer-at-bottom))))
   ;; 关闭 compilation 缓冲区
   (my-leader-def
     :states 'normal
     "cc" (lambda () (interactive)
-	       (let ((win (get-buffer-window "*compilation*")))
-	         (when win
-	           (quit-window nil win)))))
+           (let ((win (get-buffer-window "*compilation*")))
+             (when win
+               (quit-window nil win)))))
   ;; 下一个错误
   (my-leader-def
     :states 'normal
@@ -160,10 +164,10 @@
     :keymaps 'dashboard-mode-map
     :states 'normal
     "q" (lambda ()
-	      (interactive)
-	      (if (my/has-file-buffers-p)
-	          (quit-window)
-	        (save-buffers-kill-terminal))))
+          (interactive)
+          (if (my/has-file-buffers-p)
+              (quit-window)
+            (save-buffers-kill-terminal))))
   ;; org mode TAB 和 RET 切换标题折叠
   (general-define-key
    :keymaps 'org-mode-map

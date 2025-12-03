@@ -70,9 +70,9 @@
 
 ;; 代码模式和文本模式显示行号
 (dolist (line-number-hook '(prog-mode-hook
-			    text-mode-hook
-			    conf-mode-hook
-			    lisp-interaction-mode-hook))
+                            text-mode-hook
+                            conf-mode-hook
+                            lisp-interaction-mode-hook))
   (add-hook line-number-hook 'display-line-numbers-mode))
 
 ;; 所有打开的文件都显示行号
@@ -84,6 +84,37 @@
 
 ;; 使用相对行号
 (defvar display-line-numbers-type 'relative)
+
+;; 设置空白符的显示样式
+(setq whitespace-style
+      '(face
+        spaces
+        tabs
+        newline
+        trailing
+        leading
+        space-mark
+        tab-mark
+        ))
+
+;; 全局启用空白字符展示
+;;(global-whitespace-mode 1)
+
+;; 默认关闭软折行
+(setq-default truncate-lines t)
+
+;; tab 显示的空格数量
+(setq-default tab-width 4)
+
+;; 文件自定义钩子
+(dolist (file-custom-hook '(prog-mode-hook
+                            text-mode-hook
+                            conf-mode-hook
+                            lisp-interaction-mode-hook))
+  (add-hook file-custom-hook
+            (lambda ()
+              ;; 使用空格缩进代码
+              (setq indent-tabs-mode nil))))
 
 ;; 设置括号匹配的高亮显示
 (setq show-paren-highlight-openparen nil)
@@ -98,18 +129,20 @@
      (define-key viper-vi-global-user-map (kbd "g g") 'beginning-of-buffer)
      (define-key viper-vi-global-user-map (kbd "SPC f") 'dired)
      (define-key viper-vi-global-user-map (kbd "SPC c o") (lambda () (interactive)
-                                (let ((buf (get-buffer-create "*compilation*")))
-                                  (with-current-buffer buf
-                                (unless (eq major-mode 'compilation-mode)
-                                  (compilation-mode)))
-                                  (display-buffer buf 'display-buffer-at-bottom))))
+                                                            (let ((buf (get-buffer-create "*compilation*")))
+                                                              (with-current-buffer buf
+                                                                (unless (eq major-mode 'compilation-mode)
+                                                                  (compilation-mode)))
+                                                              (display-buffer buf 'display-buffer-at-bottom))))
      (define-key viper-vi-global-user-map (kbd "SPC cc") (lambda () (interactive)
-                               (let ((win (get-buffer-window "*compilation*")))
-                                 (when win
-                                   (quit-window nil win)))))
+                                                           (let ((win (get-buffer-window "*compilation*")))
+                                                             (when win
+                                                               (quit-window nil win)))))
      (define-key viper-vi-global-user-map (kbd "SPC c n") 'next-error)
      (define-key viper-vi-global-user-map (kbd "SPC c p") 'previous-error)
      (define-key viper-vi-global-user-map (kbd "SPC c m") 'compile)
+     (define-key viper-vi-global-user-map (kbd "SPC , l") 'global-whitespace-mode)
+     (define-key viper-vi-global-user-map (kbd "SPC , w") 'toggle-truncate-lines)
      (define-key viper-emacs-global-user-map (kbd "C-h") 'help-command)
      (define-key viper-insert-global-user-map (kbd "C-h") 'help-command)
      (define-key viper-vi-global-user-map (kbd "C-h") 'help-command)))

@@ -111,9 +111,9 @@
 
 ;; 代码模式和文本模式显示行号
 (dolist (line-number-hook '(prog-mode-hook
-			    text-mode-hook
-			    conf-mode-hook
-			    lisp-interaction-mode-hook))
+                            text-mode-hook
+                            conf-mode-hook
+                            lisp-interaction-mode-hook))
   (add-hook line-number-hook 'display-line-numbers-mode))
 
 ;; 所有打开的文件都显示行号
@@ -125,6 +125,21 @@
 
 ;; 使用相对行号
 (defvar display-line-numbers-type 'relative)
+
+;; 设置空白符的显示样式
+(setq whitespace-style
+      '(face
+        spaces
+        tabs
+        newline
+        trailing
+        leading
+        space-mark
+        tab-mark
+        ))
+
+;; 全局启用空白字符展示
+(global-whitespace-mode 1)
 
 ;; 设置括号匹配的高亮显示
 (setq show-paren-highlight-openparen nil)
