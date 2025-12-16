@@ -168,6 +168,22 @@
           (if (my/has-file-buffers-p)
               (quit-window)
             (save-buffers-kill-terminal))))
+  ;; 复制当前行，不改变列索引
+  (general-def
+    :states 'normal
+    "C-j" (lambda ()
+            (interactive)
+            (duplicate-line)
+            (next-line)))
+  ;; 删除当前行，不改变列索引
+  (general-def
+    :states 'normal
+    "C-k" (lambda ()
+             (interactive)
+             (let ((col (current-column)))
+               (kill-whole-line)
+               (previous-line)
+               (move-to-column col t))))
   ;; org mode TAB 和 RET 切换标题折叠
   (general-define-key
    :keymaps 'org-mode-map
