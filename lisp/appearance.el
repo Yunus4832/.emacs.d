@@ -145,6 +145,15 @@
 (setq show-paren-highlight-openparen nil)
 (set-face-attribute 'show-paren-match nil :background "green" :foreground (face-attribute 'default :background nil))
 
+;; 帮助窗口显示在右侧
+(setq display-buffer-alist
+      (cons '("\\*Help\\*"
+              (display-buffer-in-side-window)
+              (side . right)
+              (slot . 0)
+              (window-width . 80))
+            display-buffer-alist))
+
 (provide 'appearance)
 
 ;;; appearance.el ends here
