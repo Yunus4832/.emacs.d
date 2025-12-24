@@ -80,6 +80,14 @@
                 (org-todo-if-needed "DOING"))))))))
 (add-hook 'org-checkbox-statistics-hook #'ct/org-summary-checkbox-cookie)
 
+(add-hook 'org-mode-hook
+          (lambda ()
+            (setq-local electric-pair-inhibit-predicate
+                        (lambda (c)
+                          (or (char-equal c ?<)
+                              (electric-pair-default-inhibit c))))))
+
+
 (provide 'org-config)
 
 ;;; org-config.el ends here

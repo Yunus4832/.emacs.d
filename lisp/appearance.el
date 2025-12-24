@@ -138,8 +138,8 @@
         tab-mark
         ))
 
-;; 全局启用空白字符展示
-(global-whitespace-mode 1)
+;; 默认关闭空白字符展示
+(global-whitespace-mode 0)
 
 ;; 设置括号匹配的高亮显示
 (setq show-paren-highlight-openparen nil)
