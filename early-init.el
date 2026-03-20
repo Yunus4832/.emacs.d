@@ -4,21 +4,16 @@
 
 ;;; Code:
 
-;; 关闭菜单栏
-(menu-bar-mode 0)
+;; 关闭菜单栏、工具栏和滚动条
+(dolist (mode '(menu-bar-mode scroll-bar-mode tool-bar-mode))
+  (when (fboundp mode)
+    (funcall mode 0)))
 
-;; 关闭滚动条
-(when (fboundp 'scroll-bar-mode)
-  (scroll-bar-mode 0))
-
-;; 关闭工具栏
-(when (fboundp 'scroll-bar-mode)
-  (tool-bar-mode 0))
-
-;; 设置默认的窗口列宽 100 列, 背景黑色，前景白色
-(when (fboundp 'scroll-bar-mode)
-  (setq default-frame-alist '((width . 100)
-                              (background-color . "#272822")
-                              (foreground-color . "white"))))
+;; 设置默认的窗口属性: 列宽, 背景颜色, 前景颜色, 字体
+(setq default-frame-alist
+      '((width . 100)
+        (background-color . "#272822")
+        (foreground-color . "white")
+        (font . "Consolas NF")))
 
 ;;; early-init.el ends here
