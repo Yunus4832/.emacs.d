@@ -13,7 +13,6 @@
 (setq default-frame-alist
       '((width . 100)
         (background-color . "#272822")
-        (foreground-color . "white")
-        (font . "Consolas NF")))
+        (foreground-color . "white")))
 
 ;;; early-init.el ends here
