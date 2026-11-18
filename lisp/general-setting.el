@@ -4,6 +4,9 @@
 
 ;;; Code:
 
+;; 关闭内置启动页；无文件启动时仍由 Dashboard 显示首页。
+(setq inhibit-startup-screen t)
+
 ;; 关闭自动保存
 (setq auto-save-default nil)
 
